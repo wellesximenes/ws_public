@@ -1,0 +1,17 @@
+Job {
+  Name = "job"
+  Description = "Descrição do backup"
+  JobDefs = "jobdef"
+  Level = Incremental #Tipo de backup
+  FileSet="fileset" 
+  Schedule = "schedule"
+
+  # Comando para rodar antes do job geralmente usado para bd de dados
+  RunBeforeJob = "/usr/lib/bareos/scripts/make_catalog_backup.pl MyCatalog"
+
+  # Comando para rodar depois do job 
+  RunAfterJob  = "/usr/lib/bareos/scripts/delete_catalog_backup"
+
+  #Write Bootstrap = "|/usr/bin/bsmtp -h localhost -f \"\(Bareos\) \" -s \"Bootstrap for Job %j\" root"
+  Priority = 11                   # Definição de prioridade
+}

@@ -1,0 +1,16 @@
+FileSet {
+  Name = "Fileses"
+  Description = "Determine o que deve constar no backup"
+  Include {
+    Options {
+      Signature = MD5 # Validador de mudança nos arquivos
+      One FS = No     # Tipo de sistema de arquivo
+    }
+    File = / #Caminho que deve ser salvo no servidor
+  }
+ 
+  Exclude {
+    File = /var/lib/bareos # Pasta exclusa do backup
+
+  }
+}

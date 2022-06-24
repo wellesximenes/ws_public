@@ -1,0 +1,10 @@
+Pool {
+  Name = pool
+  Pool Type = Backup
+  Recycle = yes                       # Definição se volume pode ser reutilizado
+  AutoPrune = yes                     # Deletar volume apos periodo de reciclagem
+  Volume Retention = 90 days          # Periodo de retenção do volume
+  Maximum Volume Bytes = 10G          # Tamanho do volume
+  Maximum Volumes = 100               # Maxima quantidade de volume
+  Label Format = "Differential-"      # Nomeclatura usada no volume 
+}
